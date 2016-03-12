@@ -45,7 +45,10 @@ commands["/wat"] = {
 commands["/woop"] = {
   "desc": "/woop - spin2win.gif",
   "fn": function (text) {
-    return "http://i.imgur.com/kV60V2f.gif";
+    var n = Math.random();
+    if (n < 0.05) return "https://i.imgur.com/KHIls9k.gif";
+    else if (n < 0.25) return "http://i.imgur.com/kV60V2f.gif";
+    else return "http://i.imgur.com/eI1ompx.gif";
   }
 };
 
