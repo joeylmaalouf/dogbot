@@ -47,8 +47,8 @@ commands["/woop"] = {
   "fn": function (text) {
     var n = Math.random();
     if (n < 0.05) return "https://i.imgur.com/KHIls9k.gif";
-    else if (n < 0.25) return "http://i.imgur.com/kV60V2f.gif";
-    else return "http://i.imgur.com/eI1ompx.gif";
+    else if (n < 0.25) return "https://i.imgur.com/kV60V2f.gif";
+    else return "https://i.imgur.com/eI1ompx.gif";
   }
 };
 
@@ -63,6 +63,13 @@ commands["/reddit"] = {
   "desc": "/reddit <text> - Subreddit for <text>",
   "fn": function (text) {
     return "https://www.reddit.com/r/" + encodeURI(text);
+  }
+};
+
+commands["/roll"] = {
+  "desc": "/roll <number> - Random dice roll between 1 and <number>",
+  "fn": function (text) {
+    return Math.floor(Math.random() * Number(text)) + 1;
   }
 };
 
