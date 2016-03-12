@@ -8,7 +8,7 @@ bot.on("message", function (message) {
   if (message.content === "/dbhelp") {
     var response = "Possible commands:";
     for (var command in commands) {
-      response += "\n" + command + " - " + commands[command].desc;
+      response += "\n" + commands[command].desc;
     }
     bot.reply(message, response);
   }
