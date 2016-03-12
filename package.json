@@ -1,0 +1,22 @@
+{
+  "name": "dogbot",
+  "version": "1.0.0",
+  "description": "Discord chat bot.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeylmaalouf/dogbot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeylmaalouf/dogbot/issues"
+  },
+  "homepage": "https://github.com/joeylmaalouf/dogbot#readme",
+  "dependencies": {
+    "discord.js": "^6.0.0"
+  }
+}
