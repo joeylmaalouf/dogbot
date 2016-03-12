@@ -1,0 +1,2 @@
+# dogbot
+Discord chat bot.
