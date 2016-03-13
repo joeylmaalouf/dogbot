@@ -52,6 +52,13 @@ commands["/woop"] = {
   }
 };
 
+commands["/google"] = {
+  "desc": "/google <text> - Google search for <text>",
+  "fn": function (text) {
+    return "https://www.google.com/#q=" + encodeURI(text);
+  }
+};
+
 commands["/wiki"] = {
   "desc": "/wiki <text> - Wikipedia search for <text>",
   "fn": function (text) {
@@ -69,7 +76,7 @@ commands["/reddit"] = {
 commands["/roll"] = {
   "desc": "/roll <number> - Random dice roll between 1 and <number>",
   "fn": function (text) {
-    return Math.floor(Math.random() * Number(text)) + 1;
+    return 1 + Math.floor(Math.random() * Number(text));
   }
 };
 
