@@ -1,9 +1,23 @@
 var commands = {};
 
-commands["ping"] = {
-  "desc": "ping - pong",
+commands["/ping"] = {
+  "desc": "/ping - pong",
   "fn": function (text) {
     return "pong";
+  }
+};
+
+commands["/ayy"] = {
+  "desc": "/ayy - lmao",
+  "fn": function (text) {
+    return "lmao";
+  }
+};
+
+commands["/gottem"] = {
+  "desc": "/gottem - (☞ﾟヮﾟ)☞",
+  "fn": function (text) {
+    return "(☞ﾟヮﾟ)☞";
   }
 };
 
@@ -74,9 +88,17 @@ commands["/reddit"] = {
 };
 
 commands["/roll"] = {
-  "desc": "/roll <number> - Random dice roll between 1 and <number>",
+  "desc": "/roll <m> [n] - Random dice roll between 1 and <m>, [n] many times (default 1)",
   "fn": function (text) {
-    return 1 + Math.floor(Math.random() * Number(text));
+    var nums = text.split(" ");
+    var m = Number(nums[0]);
+    var n = Number(nums[1]) || 1;
+    var results = [];
+    for (var i = 0; i < n; ++i) {
+      results.push(1 + Math.floor(Math.random() * m));
+    };
+    var sum = results.reduce(function (a, b) {return a + b;});
+    return sum + " (" + results.join(", ") + ")";
   }
 };
 
