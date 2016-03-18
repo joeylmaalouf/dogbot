@@ -5,21 +5,13 @@ var commands = require("./commands.js");
 var bot = new Discord.Client();
 
 bot.on("message", function (message) {
-  if (message.content === "/dbhelp") {
-    var response = "Possible commands:";
-    for (var command in commands) {
-      response += "\n" + commands[command].desc;
-    }
-    bot.reply(message, response);
-  }
-  else {
-    var segments = message.content.split(/ (.+)/);
-    for (var command in commands) {
-      if (segments[0] === command) {
-        bot.reply(message, commands[command].fn(segments[1]));
-        break;
-      };
-    }
+  var args = message.content.split(" ");
+  var comm = args.shift();
+  for (var command in commands) {
+    if (comm === command) {
+      bot.reply(message, commands[command].fn(bot, args));
+      break;
+    };
   }
 });
 
