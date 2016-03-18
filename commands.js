@@ -80,7 +80,14 @@ commands["/woop"] = {
 commands["/uptime"] = {
   "desc": "/uptime - bot uptime in ms",
   "fn": function (bot, args) {
-    return bot.uptime;
+    var t = bot.uptime;
+    var ms = t % 1000; t = Math.floor(t / 1000);
+    var s = t % 60; t = Math.floor(t / 60);
+    var m = t % 60; t = Math.floor(t / 60);
+    var h = t % 24; t = Math.floor(t / 24);
+    var d = t;
+    var response = [d, h, m, s, ms].join(", ");
+    return d + "d, " + h + "h, " + m + "m, " + s + "s, " + ms + "ms";
   }
 };
 
