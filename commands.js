@@ -97,6 +97,13 @@ commands["/playlist"] = {
   }
 };
 
+commands["/gitgud"] = {
+  "desc": "/gitgud - Project M tech",
+  "fn": function (bot, args) {
+    return "https://redd.it/3m9sf6";
+  }
+};
+
 commands["/google"] = {
   "desc": "/google <args> - Google search for <args>",
   "fn": function (bot, args) {
