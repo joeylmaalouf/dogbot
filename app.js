@@ -4,14 +4,6 @@ var commands = require("./commands.js");
 
 var bot = new Discord.Client();
 
-bot.on("ready", function () {
-  for (var i = 0; i < bot.servers.length; ++i) {
-    if (bot.servers[i].channels.length) {
-      bot.sendMessage(bot.servers[i].channels.get("name", "bot-test"), "DogBot is online! Type /dbhelp to learn more.");
-    }
-  }
-});
-
 bot.on("message", function (message) {
   var args = message.content.split(" ");
   var comm = args.shift();
